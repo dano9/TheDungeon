@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: 33fca7e38f48f43439b012ee1d1c9f53
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HeadMouthOpen0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 213
+        width: 40
+        height: 39
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 622e934fd1a4bdc44879e6e5b3527134
+      internalID: 1704333452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeadMouthOpen1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 170
+        width: 41
+        height: 40
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab370fc4d7dfb644bb2a8e0ed3eb1c98
+      internalID: 1480638885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeadMouthClosed0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 40
+        height: 40
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9effb51beeb57141bfbdc5e5e88ed7a
+      internalID: -265714310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeadMouthClosed1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 40
+        height: 41
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb324660fd97724cad2b38427ca1a6c
+      internalID: -1793838312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeadAsleep0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 37
+        height: 41
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd71d2f6d4b07e44d80c171d54f87a27
+      internalID: 1787786021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeadAsleep1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 41
+        width: 37
+        height: 40
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a095541e00421cf439c3af1967a86007
+      internalID: 840189059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neck
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 67
+        width: 31
+        height: 19
+      alignment: 9
+      pivot: {x: 0.23494154, y: 0.4417837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf99aa96c136a144840dd5ebd4b4ecd
+      internalID: -1923759189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 35
+        width: 50
+        height: 29
+      alignment: 9
+      pivot: {x: 0.84, y: 0.5862069}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef997354c2653f46826c13a9cb3dd50
+      internalID: -505972686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tail0
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 17
+        width: 26
+        height: 16
+      alignment: 9
+      pivot: {x: 0.26923078, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16308cc42013cd41a1c1abc6fd5d824
+      internalID: -1229533200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tail1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.4666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1ead5cc467d5147910cb07ef6ad82c
+      internalID: -259728129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tail2
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 13
+        width: 22
+        height: 10
+      alignment: 9
+      pivot: {x: 0.22727273, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b0e0085addeba3429bd142b7c8b9872
+      internalID: 1378411242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tail3
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 3
+        width: 22
+        height: 9
+      alignment: 9
+      pivot: {x: 0.18181819, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d47c820a5a25246841c9c8976dae7b
+      internalID: 898728427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leg0
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 124
+        width: 30
+        height: 29
+      alignment: 9
+      pivot: {x: 0.122962445, y: 0.7014002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7bd22ce3a94f084fb9e592d99d3fdc8
+      internalID: -167270406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leg1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 109
+        width: 29
+        height: 15
+      alignment: 9
+      pivot: {x: 0.20197585, y: 0.18367055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ecab41d3db161344801a81affa611ed
+      internalID: 1286196421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leg2
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 87
+        width: 18
+        height: 21
+      alignment: 9
+      pivot: {x: 0.8888889, y: 0.85714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b714176c39f454a9212a8fce00900a
+      internalID: 473521917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arm0
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 97
+        width: 13
+        height: 17
+      alignment: 9
+      pivot: {x: 0.30769232, y: 0.7647059}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c157e1d485e75b140b9a1201cf58c3e3
+      internalID: -579460104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arm1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 81
+        width: 22
+        height: 12
+      alignment: 9
+      pivot: {x: 0.8181819, y: 0.8333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce485256259cff4488ba8efb8a0e0ec
+      internalID: -1406969358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arm2
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 67
+        width: 16
+        height: 8
+      alignment: 9
+      pivot: {x: 0.875, y: 0.875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe057e6ab040ee4e902f03b484dbea5
+      internalID: -917441661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wing0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 180
+        width: 97
+        height: 76
+      alignment: 9
+      pivot: {x: 0.20618556, y: 0.93421054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1932adcf8fc361646be2ebeb8b72ee0a
+      internalID: 2136091859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wing1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 127
+        width: 74
+        height: 51
+      alignment: 9
+      pivot: {x: 0.24324325, y: 0.94117653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27bd51aface6aea4e9869708733973bb
+      internalID: -124164815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wing4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 169
+        width: 96
+        height: 86
+      alignment: 9
+      pivot: {x: 0.3229167, y: 0.046511628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8436681122b2e294bb1a72453b8ffed7
+      internalID: -828863402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wing2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 152
+        width: 98
+        height: 17
+      alignment: 9
+      pivot: {x: 0.24489796, y: 0.5882353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3e487a998d1e84b9bf07dde5a73f69
+      internalID: -632878304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wing3
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 116
+        width: 93
+        height: 36
+      alignment: 9
+      pivot: {x: 0.24731183, y: 0.055555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fffe3182157b0448b46a11ffc3c7cb9
+      internalID: -1233713924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eyeball
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f27a2c031bf271498b1cc8e8a8f4a14
+      internalID: -1700607054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Arm0: -579460104
+      Arm1: -1406969358
+      Arm2: -917441661
+      Body: -505972686
+      Eyeball: -1700607054
+      HeadAsleep0: 1787786021
+      HeadAsleep1: 840189059
+      HeadMouthClosed0: -265714310
+      HeadMouthClosed1: -1793838312
+      HeadMouthOpen0: 1704333452
+      HeadMouthOpen1: 1480638885
+      Leg0: -167270406
+      Leg1: 1286196421
+      Leg2: 473521917
+      Neck: -1923759189
+      Tail0: -1229533200
+      Tail1: -259728129
+      Tail2: 1378411242
+      Tail3: 898728427
+      Wing0: 2136091859
+      Wing1: -124164815
+      Wing2: -632878304
+      Wing3: -1233713924
+      Wing4: -828863402
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
