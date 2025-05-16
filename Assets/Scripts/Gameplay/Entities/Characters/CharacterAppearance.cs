@@ -18,6 +18,7 @@ public class CharacterAppearance : MonoBehaviour
     protected float jogYOffsetRound;
     public Vector2 appearanceStepOffset;
     public Vector2 appearanceOffset;
+    public Vector2 attackLungeOffset;
     Sound footstepsSource;
     
 
@@ -76,8 +77,9 @@ public class CharacterAppearance : MonoBehaviour
     }
     public void ApplyOffset(bool lerp=false)
     {
-        if (!cc.cm.rolling && lerp) {appearanceStepOffset = Vector2.MoveTowards(appearanceStepOffset,Vector2.zero,Time.deltaTime*3f);}
-        appearanceTrans.localPosition = appearanceStepOffset + appearanceOffset;
+        attackLungeOffset = Vector2.MoveTowards(attackLungeOffset,Vector2.zero,Time.deltaTime*1f);
+        if (!cc.cm.rolling && lerp) { appearanceStepOffset = Vector2.MoveTowards(appearanceStepOffset, Vector2.zero, Time.deltaTime * 3f); }
+        appearanceTrans.localPosition = appearanceStepOffset + appearanceOffset + attackLungeOffset;
     }
     float footstepWalkSFXT=0; float footstepRunSFXT=0;
     bool footstepsRunning =false;

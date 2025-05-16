@@ -2586,9 +2586,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.105734766
+    x: 0.10431655
     y: 0
-    width: 0.78853047
+    width: 0.79136693
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -3032,7 +3032,6 @@ MonoBehaviour:
   globalLight: {fileID: 619394801}
   colorChangeSpeed: 0.01
   intensityChangeSpeed: 0.01
-  bgColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &741593862
 Transform:
   m_ObjectHideFlags: 0
@@ -3618,7 +3617,10 @@ MonoBehaviour:
   interval: 0.3
   intervalLengthenIndexMultiplier: 0
   curSprite: 0
+  playOnWake: 1
+  loop: 1
   loopBackwards: 1
+  hideOnEnd: 1
 --- !u!212 &1132636561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4101,7 +4103,10 @@ MonoBehaviour:
   interval: 0.3
   intervalLengthenIndexMultiplier: 0
   curSprite: 30
+  playOnWake: 1
+  loop: 1
   loopBackwards: 1
+  hideOnEnd: 1
 --- !u!212 &1578119521
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4378,6 +4383,121 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1714060884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714060885}
+  - component: {fileID: 1714060887}
+  - component: {fileID: 1714060886}
+  m_Layer: 0
+  m_Name: SlashFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1714060885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714060884}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.193, y: 0.487, z: 0}
+  m_LocalScale: {x: 1, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1949454465}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714060886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714060884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3daa51efae123da4b9536a5e9e37228f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1217564755, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+  - {fileID: 1450927641, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+  - {fileID: -1351301618, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+  - {fileID: 2107954874, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+  - {fileID: -231268900, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+  - {fileID: -1791388711, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+  spriteRenderer: {fileID: 1714060887}
+  interval: 0.02
+  intervalLengthenIndexMultiplier: 0
+  curSprite: 0
+  playOnWake: 0
+  loop: 0
+  loopBackwards: 0
+  hideOnEnd: 1
+--- !u!212 &1714060887
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714060884}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 5896552631235084696, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.03, y: 0.19}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1723312182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,7 +4623,10 @@ MonoBehaviour:
   interval: 0.3
   intervalLengthenIndexMultiplier: 0
   curSprite: 20
+  playOnWake: 1
+  loop: 1
   loopBackwards: 1
+  hideOnEnd: 1
 --- !u!212 &1725571602
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4894,6 +5017,30 @@ MonoBehaviour:
         clips:
         - {fileID: 8300000, guid: 25cc3523d1cff9c458c9ccaed81b6b2a, type: 3}
     soundlists: []
+  - categoryName: Weapons
+    subCategories:
+    - categoryName: Sword
+      subCategories:
+      - categoryName: Slash
+        subCategories: []
+        soundlists:
+        - soundsName: Light
+          lastClipUsed: 0
+          clips:
+          - {fileID: 8300000, guid: 3a0d2bd10cc2ec64fac60ca4b0455dc2, type: 3}
+          - {fileID: 8300000, guid: 179884c5809a0b1408c82f455e4fc9a9, type: 3}
+          - {fileID: 8300000, guid: 5cdc8d2c621d82a48839c6d0b993b26c, type: 3}
+          - {fileID: 8300000, guid: e53096291ecbee945a04cb8c7aa39aa4, type: 3}
+          - {fileID: 8300000, guid: 875630ab17bc97e459229a62bd2f6f2e, type: 3}
+        - soundsName: Heavy
+          lastClipUsed: 0
+          clips: []
+      soundlists:
+      - soundsName: Stone
+        lastClipUsed: 0
+        clips:
+        - {fileID: 8300000, guid: cdee8d63cb50eb946b2cbe073818a1f6, type: 3}
+    soundlists: []
   freeSounds: []
   sounds: []
   sourcePrefab: {fileID: 5589430791573584675, guid: 08d0e069d54af834bafb42f06bc3dafa, type: 3}
@@ -4945,6 +5092,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 102699947}
+  - {fileID: 1714060885}
   - {fileID: 2062946857}
   - {fileID: 1155626120}
   - {fileID: 1203417133}
@@ -4970,7 +5118,9 @@ MonoBehaviour:
   flipM: 0
   appearanceStepOffset: {x: 0, y: 0}
   appearanceOffset: {x: 0, y: 0}
+  attackLungeOffset: {x: 0, y: 0}
   playerLight: {fileID: 2062946858}
+  slashFX: {fileID: 1714060886}
 --- !u!82 &1949454467
 AudioSource:
   m_ObjectHideFlags: 0
