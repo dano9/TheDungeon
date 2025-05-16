@@ -105,7 +105,6 @@ public class CharacterMovement : MonoBehaviour
     }
     protected virtual void Jump()
     {
-        Debug.Log("JUMPED");
         onGround = false; 
         if (!isSliding || onLadder) {rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); }// transform.position += (Vector3)groundNormal *0.2f;}
         rb.AddForce((isSliding ? Vector2.Lerp(groundNormal,Vector2.up,0.25f) : Vector2.up) * jumpForce);

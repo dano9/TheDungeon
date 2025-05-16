@@ -114,7 +114,6 @@ public class WorldManager : MonoBehaviour
             levelInstances[levelInstance.levelName] = levelInstance;
             levelInstance.asyncInstanced=true;
             awaitingLevelLoad=false;
-            Debug.Log("INSTANCED ASYNC LEVEL!");
         }
         else
         {

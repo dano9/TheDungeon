@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct LightingCoordination
+{
+    public float globalLightIntensity;
+    public Color globalLightColor;
+    public float playerLightIntensity;
+    public Color playerLightColor;
+    public Color bgColor;
+}
 [ExecuteInEditMode]
 public class CamCoordinator : MonoBehaviour
 {
     PlayerCamera playerCam;
     public BoxCollider2D boxCol;
-    public Color bgColor;
-    public float playerLightVal;
+    public LightingCoordination lightingCoordination;
     public int potency;
     public float zoom;
     public Vector4 bounds;
@@ -78,7 +86,7 @@ public class CamCoordinator : MonoBehaviour
         {
             if (playerCam.curCamCoord == null || playerCam.curCamCoord.potency < potency)
             {
-                playerCam.curCamCoord = this;
+                playerCam.SwitchCamCoord(this);
             }
         }
     }

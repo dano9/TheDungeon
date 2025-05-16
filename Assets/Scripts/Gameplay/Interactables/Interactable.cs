@@ -17,15 +17,15 @@ public class Interactable : MonoBehaviour
 
     public virtual void OnStartPrompt()
     {
-        Debug.Log("Started Prompt for: " + actionLabel);
+        //Debug.Log("Started Prompt for: " + actionLabel);
     }
     public virtual void OnEndPrompt()
     {
-        Debug.Log("Ended Prompt for: " + actionLabel);
+        //Debug.Log("Ended Prompt for: " + actionLabel);
     }
     public virtual void Use()
     {
-        Debug.Log("Used Interactable: " + actionLabel);
+        //Debug.Log("Used Interactable: " + actionLabel);
     }
     
 }

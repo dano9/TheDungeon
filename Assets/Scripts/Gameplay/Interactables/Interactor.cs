@@ -65,7 +65,6 @@ public class Interactor : MonoBehaviour
                 potI.distance = dist;
                 potI.lastUpdate=Time.time;
                 potI.priority = inter.priority;
-                Debug.Log("UPDATED INTERACTABLE");
                 if (!alreadyPotential) {potentialInters[inter] = potI;}
             }
         }
