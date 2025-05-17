@@ -9,6 +9,8 @@ public class PlayerController : CharacterController
     public Transform lookTarget;
     public Passage passageOverrideInput;
     public bool readyForInteraction;
+    public BoxCollider2D hitDetectionBox;
+    public LayerMask hittableLayers;
     void Awake()
     {
         main = this;
@@ -25,7 +27,7 @@ public class PlayerController : CharacterController
             return;
         }
         
-    }    
+    }
     protected override void Update()
     {
         base.Update();
@@ -34,15 +36,40 @@ public class PlayerController : CharacterController
         {
             return;
         }
+
+        if (NewInput.controls.Gameplay.AttackPrimary.WasPressedThisFrame())
+        {
+            Attack(hitDetectionBox);
+        }
         
         // if (Input.GetKeyDown("f"))
         // {
         //     Die();
         // }  
     }
+    public void Attack(BoxCollider2D attackArea)
+    {
+        // Get the bounds of the BoxCollider2D
+        Bounds bounds = attackArea.bounds;
+
+        // Get all colliders in the box
+        Collider2D[] hits = Physics2D.OverlapBoxAll(bounds.center, bounds.size, 0f, hittableLayers);
+
+        foreach (Collider2D hit in hits)
+        {
+            // Example: Call TakeDamage if object has IHittable component
+            Hittable hittable = hit.GetComponent<Hittable>();
+            if (hittable != null)
+            {
+                hittable.TakeHit(1); // Example damage amount
+            }
+        }
+
+        ((PlayerAppearance)ca).OnAttack();
+    }
     public void GoToPassage(Passage passage)
     {
-        cm.onGround=false;
+        cm.onGround = false;
         Vector2 deltaPos = passage.exitPos.position - transform.position;
         transform.position = passage.exitPos.position;
         PlayerCamera.main.GoToPassage(passage);

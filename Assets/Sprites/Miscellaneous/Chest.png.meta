@@ -1,7 +1,25 @@
 fileFormatVersion: 2
-guid: 58820325c592a7e4db0e1b529ebcf427
+guid: e738818195738754ab100c78db2959d8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5281422124547630143
+    second: Chest_0
+  - first:
+      213: 4714410783012859700
+    second: Chest_1
+  - first:
+      213: -4685547431992939551
+    second: Chest_2
+  - first:
+      213: 8985439187258846068
+    second: Chest_3
+  - first:
+      213: -5279824056886119778
+    second: Chest_4
+  - first:
+      213: 826535257128478662
+    second: Chest_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -65,7 +83,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
@@ -93,198 +111,137 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 53
-        width: 6
-        height: 10
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98c8843a999a74b4db1168b330a623da
-      internalID: 161382862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skeleton
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 53
-        width: 5
-        height: 10
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e073f744d703a2b47b5436f5b30b48cb
-      internalID: 77548835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TorsoArmour
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 54
-        width: 6
-        height: 5
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2fa955c094af5b468605e0dd9d09cca
-      internalID: -900716177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerLegs
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 52
-        width: 6
-        height: 2
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64811f47755593343a669db2c9cb9d12
-      internalID: 2087753074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerHelm
+      name: Chest_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 59
-        width: 8
-        height: 5
-      alignment: 6
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2b978c9fb41516143bb194e2b7fd6246
-      internalID: -91172579
+      spriteID: 1cb13755f8e94b6b0800000000000000
+      internalID: -5281422124547630143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerHead
+      name: Chest_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 59
-        width: 7
-        height: 5
-      alignment: 6
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3b6e4a4e55c79654288c59cb38da634a
-      internalID: 437264123
+      spriteID: 43fa0ce01a3fc6140800000000000000
+      internalID: 4714410783012859700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerTorso
+      name: Chest_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 54
-        width: 6
-        height: 5
-      alignment: 6
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b50f38054163fb947832f90fae59ea26
-      internalID: 1421962242
+      spriteID: 1eb21d98f6799feb0800000000000000
+      internalID: -4685547431992939551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b207b7551b2bc70800000000000000
+      internalID: 8985439187258846068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92bdb47efb4ab6b0800000000000000
+      internalID: -5279824056886119778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7aa7bef61787b00800000000000000
+      internalID: 826535257128478662
       vertices: []
       indices: 
       edges: []
@@ -293,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 8f308556753cd9f46a084bf66a8a8b2a
     internalID: 0
     vertices: []
     indices: 
@@ -301,15 +258,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":3.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Player: 161382862
-      PlayerHead: 437264123
-      PlayerHelm: -91172579
-      PlayerLegs: 2087753074
-      PlayerTorso: 1421962242
-      Skeleton: 77548835
-      TorsoArmour: -900716177
+      Chest_0: -5281422124547630143
+      Chest_1: 4714410783012859700
+      Chest_2: -4685547431992939551
+      Chest_3: 8985439187258846068
+      Chest_4: -5279824056886119778
+      Chest_5: 826535257128478662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

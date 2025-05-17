@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 58820325c592a7e4db0e1b529ebcf427
+guid: 1a0ff2f308fc7f44c920ad0767af12d3
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7017234907573934885
+    second: AttackSliceEffect0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -65,7 +68,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
@@ -93,167 +96,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 53
-        width: 6
-        height: 10
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98c8843a999a74b4db1168b330a623da
-      internalID: 161382862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skeleton
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 53
-        width: 5
-        height: 10
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e073f744d703a2b47b5436f5b30b48cb
-      internalID: 77548835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TorsoArmour
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 54
-        width: 6
-        height: 5
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2fa955c094af5b468605e0dd9d09cca
-      internalID: -900716177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerLegs
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 52
-        width: 6
-        height: 2
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64811f47755593343a669db2c9cb9d12
-      internalID: 2087753074
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerHelm
+      name: AttackSliceEffect0_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 59
-        width: 8
-        height: 5
-      alignment: 6
+        y: 24
+        width: 24
+        height: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2b978c9fb41516143bb194e2b7fd6246
-      internalID: -91172579
+      spriteID: bd4a59cc706cd9e90800000000000000
+      internalID: -7017234907573934885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerHead
+      name: AttackSliceEffect0_1
       rect:
         serializedVersion: 2
         x: 24
-        y: 59
-        width: 7
-        height: 5
-      alignment: 6
+        y: 24
+        width: 24
+        height: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -261,21 +137,21 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b6e4a4e55c79654288c59cb38da634a
-      internalID: 437264123
+      spriteID: 378f60d1145e3da43954efd4c87d5200
+      internalID: 189680933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerTorso
+      name: AttackSliceEffect0_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 54
-        width: 6
-        height: 5
-      alignment: 6
+        x: 0
+        y: 18
+        width: 24
+        height: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -283,8 +159,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b50f38054163fb947832f90fae59ea26
-      internalID: 1421962242
+      spriteID: 982fe0698c3a4cc42b7b5b724d549b2c
+      internalID: -1588118533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackSliceEffect0_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 18
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a937c27599358124bad2ead474b42f05
+      internalID: 497213395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackSliceEffect0_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef31d98d97bddd41896391c997c5e17
+      internalID: -1005571483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackSliceEffect0_5
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 12
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b4706145236a14f8713d452e0e7dde
+      internalID: 2125552194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackSliceEffect0_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41b5fcff56ad80428ba03e932ad3fac
+      internalID: -1634872824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackSliceEffect0_7
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 6
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd1de653a8daf54fb24b5fc29f813e4
+      internalID: -231600935
       vertices: []
       indices: 
       edges: []
@@ -293,7 +279,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 942a147571243f548ae93cf2e5f01862
     internalID: 0
     vertices: []
     indices: 
@@ -301,15 +287,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":5.0},"gridSpriteSize":{"x":24.0,"y":6.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Player: 161382862
-      PlayerHead: 437264123
-      PlayerHelm: -91172579
-      PlayerLegs: 2087753074
-      PlayerTorso: 1421962242
-      Skeleton: 77548835
-      TorsoArmour: -900716177
+      AttackSliceEffect0_0: -7017234907573934885
+      AttackSliceEffect0_1: 189680933
+      AttackSliceEffect0_2: -1588118533
+      AttackSliceEffect0_3: 497213395
+      AttackSliceEffect0_4: -1005571483
+      AttackSliceEffect0_5: 2125552194
+      AttackSliceEffect0_6: -1634872824
+      AttackSliceEffect0_7: -231600935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
