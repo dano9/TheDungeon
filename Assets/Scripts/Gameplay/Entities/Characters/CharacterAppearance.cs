@@ -19,36 +19,50 @@ public class CharacterAppearance : MonoBehaviour
     public Vector2 appearanceStepOffset;
     public Vector2 appearanceOffset;
     public Vector2 attackLungeOffset;
+    public Vector2 animOffset;
     Sound footstepsSource;
     
 
     public void LateUpdate()
     {
         ManageAppearance();
+        if (!Application.isPlaying) { return; }
         ManageSFX();
     }
     bool wasFacingLeft;
+    float lastGT;
+    bool wasOnG;
     public virtual void ManageAppearance()
     {
         flipM = (cc.facingLeft ? -1 : 1);
         movePerc = Mathf.Clamp01(Mathf.Abs(cc.rb.linearVelocity.x) / cc.cm.moveSpeed);
         fallPerc = Mathf.Clamp01(-cc.rb.linearVelocity.y / cc.cm.maxVelocity);
         jumpPerc = Mathf.Clamp01(cc.rb.linearVelocity.y / cc.cm.maxVelocity);
-        yVelocPerc = Mathf.Clamp(cc.rb.linearVelocity.y / cc.cm.maxVelocity,-1,1);
+        yVelocPerc = Mathf.Clamp(cc.rb.linearVelocity.y / cc.cm.maxVelocity, -1, 1);
         jogYOffset = 0f;
-        jogYOffsetRound =  0f;;
-        if (cc.cm.isSprinting && cc.cm.inputMovement.x != 0) 
+        jogYOffsetRound = 0f; ;
+        if (cc.cm.isSprinting && cc.cm.inputMovement.x != 0)
         {
-            jogYOffset = (Mathf.Sin(Time.time*10f)+1f)*0.5f;
-            jogYOffsetRound =  Mathf.Round(jogYOffset)*0.1f; jogYOffset *= 0.1f;
+            jogYOffset = (Mathf.Sin(Time.time * 10f) + 1f) * 0.5f;
+            jogYOffsetRound = Mathf.Round(jogYOffset) * 0.1f; jogYOffset *= 0.1f;
         }
 
-        appearanceTrans.localScale = new Vector3(flipM,appearanceTrans.localScale.y,1);
-        appearanceOffset.y = jogYOffsetRound;
-        appearanceOffset.x = jogYOffsetRound*flipM;
+        appearanceTrans.localScale = new Vector3(flipM, appearanceTrans.localScale.y, 1);
+        //appearanceOffset.y = jogYOffsetRound;
+        //appearanceOffset.x = jogYOffsetRound * flipM;
         ApplyOffset(true);
         ManageCape();
         wasFacingLeft = cc.facingLeft;
+
+
+        bool onGround = cc.cm.onGround;
+        if (onGround != wasOnG)
+        {
+            lastGT = Time.time;
+            wasOnG = onGround;
+        }
+        //if (Time.time - lastGT > 0.05f)
+        { anim.SetBool("OnGround", onGround);}
     }
 
     public void ManageCape()
@@ -79,7 +93,7 @@ public class CharacterAppearance : MonoBehaviour
     {
         attackLungeOffset = Vector2.MoveTowards(attackLungeOffset,Vector2.zero,Time.deltaTime*1f);
         if (!cc.cm.rolling && lerp) { appearanceStepOffset = Vector2.MoveTowards(appearanceStepOffset, Vector2.zero, Time.deltaTime * 3f); }
-        appearanceTrans.localPosition = appearanceStepOffset + appearanceOffset + attackLungeOffset;
+        appearanceTrans.localPosition = appearanceStepOffset + appearanceOffset + attackLungeOffset + new Vector2(animOffset.x*flipM,animOffset.y);
     }
     float footstepWalkSFXT=0; float footstepRunSFXT=0;
     bool footstepsRunning =false;
