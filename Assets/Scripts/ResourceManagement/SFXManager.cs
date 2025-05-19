@@ -42,6 +42,7 @@ public class SoundCategory
 public class SFXManager : MonoBehaviour
 {
     public static SFXManager main;
+    public AudioReverbZone reverbZone;
     public SoundCategory[] sCategories;
     public Dictionary<string, ClipsList> clipsLists;
     public List<Sound> freeSounds;

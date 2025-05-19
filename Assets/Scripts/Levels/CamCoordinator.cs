@@ -10,6 +10,8 @@ public struct LightingCoordination
     public float playerLightIntensity;
     public Color playerLightColor;
     public Color bgColor;
+    public Vector2 windForce;
+    public AudioReverbPreset reverbPreset;
 }
 [ExecuteInEditMode]
 public class CamCoordinator : MonoBehaviour

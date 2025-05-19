@@ -97,6 +97,7 @@ public class Cape : MonoBehaviour
     Vector2 lastRootPos;
     public void LateUpdate()
     {
+        windDirection = LightingManager.main.curWindForce;
         ManageForces();
 
         bool isCapeUpdate = false;
@@ -201,7 +202,7 @@ public class Cape : MonoBehaviour
     }
     public void OnDestroy()
     {
-        Destroy(capeDetach.gameObject);   
+        if (capeDetach != null && capeDetach.gameObject != null) { Destroy(capeDetach.gameObject); }  
     }
     public void ApplyForce(Vector2 force, float duration)
     {

@@ -17,6 +17,7 @@ public class LightingManager : MonoBehaviour
     private float globalLIntensity;
     private float playerLIntensity;
     private Color playerLColor;
+    public Vector2 curWindForce;
 
     public void Awake()
     {
@@ -29,10 +30,11 @@ public class LightingManager : MonoBehaviour
         UpdateLighting();
         //Camera.main.backgroundColor = Color.white;
     }
-    public void AssignLightingCoordination(LightingCoordination newLC,bool instant=false)
+    public void AssignLightingCoordination(LightingCoordination newLC, bool instant = false)
     {
         curLC = newLC;
         if (instant) { ShiftTowardCurLC(true); }
+        SFXManager.main.reverbZone.reverbPreset = curLC.reverbPreset;
     }
     public void ShiftTowardCurLC(bool instant=false)
     {
@@ -45,14 +47,16 @@ public class LightingManager : MonoBehaviour
                 globalLIntensity = curLC.globalLightIntensity;
                 playerLColor = curLC.playerLightColor;
                 playerLIntensity = curLC.playerLightIntensity;
+                curWindForce = curLC.windForce;
             }
             else
             {
-                bgColor = Color.Lerp(bgColor,curLC.bgColor,colorChangeSpeed);
-                globalLColor = Color.Lerp(globalLColor,curLC.globalLightColor,colorChangeSpeed);
+                bgColor = Color.Lerp(bgColor, curLC.bgColor, colorChangeSpeed);
+                globalLColor = Color.Lerp(globalLColor, curLC.globalLightColor, colorChangeSpeed);
                 globalLIntensity = Mathf.Lerp(globalLIntensity, curLC.globalLightIntensity, intensityChangeSpeed);
-                playerLColor = Color.Lerp(playerLColor,curLC.playerLightColor,colorChangeSpeed);
+                playerLColor = Color.Lerp(playerLColor, curLC.playerLightColor, colorChangeSpeed);
                 playerLIntensity = Mathf.Lerp(playerLIntensity, curLC.playerLightIntensity, intensityChangeSpeed);
+                curWindForce = Vector2.MoveTowards(curWindForce, curLC.windForce, intensityChangeSpeed);
             }
         }
     }

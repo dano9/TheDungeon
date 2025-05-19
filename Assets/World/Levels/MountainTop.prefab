@@ -330,7 +330,10 @@ MonoBehaviour:
   interval: 0.2
   intervalLengthenIndexMultiplier: 0.15
   curSprite: 0
+  playOnWake: 1
+  loop: 1
   loopBackwards: 1
+  hideOnEnd: 1
 --- !u!1 &2884710064399181402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,7 +1486,10 @@ MonoBehaviour:
   interval: 0.5
   intervalLengthenIndexMultiplier: 0
   curSprite: 0
+  playOnWake: 1
+  loop: 1
   loopBackwards: 0
+  hideOnEnd: 1
 --- !u!1 &2884710064894415043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,7 +2901,7 @@ GameObject:
   - component: {fileID: 2884710065269355314}
   - component: {fileID: 2884710065269355315}
   m_Layer: 2
-  m_Name: Bounds (3)
+  m_Name: CamBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2935,6 +2941,8 @@ MonoBehaviour:
     playerLightIntensity: 0
     playerLightColor: {r: 1, g: 1, b: 1, a: 0}
     bgColor: {r: 0.7058824, g: 0.69803923, b: 0.6901961, a: 1}
+    windForce: {x: 1, y: -0.8}
+    reverbPreset: 18
   potency: 2
   zoom: 0
   bounds: {x: -29.376516, y: 20.927654, z: 27.98641, w: -6.67}
@@ -3541,7 +3549,10 @@ MonoBehaviour:
   interval: 0.3
   intervalLengthenIndexMultiplier: 0
   curSprite: 0
+  playOnWake: 1
+  loop: 1
   loopBackwards: 0
+  hideOnEnd: 1
 --- !u!111 &2884710065462098206
 Animation:
   m_ObjectHideFlags: 0
@@ -4070,7 +4081,10 @@ MonoBehaviour:
   interval: 0.2
   intervalLengthenIndexMultiplier: 0.15
   curSprite: 0
+  playOnWake: 1
+  loop: 1
   loopBackwards: 1
+  hideOnEnd: 1
 --- !u!1 &2884710065629280073
 GameObject:
   m_ObjectHideFlags: 0
@@ -6150,6 +6164,18 @@ PrefabInstance:
     - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
       propertyPath: lightingCoordination.bgColor.r
       value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
+      propertyPath: lightingCoordination.windForce.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
+      propertyPath: lightingCoordination.windForce.y
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
+      propertyPath: lightingCoordination.reverbPreset
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
       propertyPath: lightingCoordination.globalLightColor.a
