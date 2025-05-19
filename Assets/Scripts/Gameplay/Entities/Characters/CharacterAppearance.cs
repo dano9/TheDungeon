@@ -7,6 +7,7 @@ public class CharacterAppearance : MonoBehaviour
     public CharacterController cc;
     public Transform appearanceTrans;
     public Cape cape;
+    public CharacterAnimData animData;
     public Animator anim;
     public float flipM;
 
@@ -19,7 +20,6 @@ public class CharacterAppearance : MonoBehaviour
     public Vector2 appearanceStepOffset;
     public Vector2 appearanceOffset;
     public Vector2 attackLungeOffset;
-    public Vector2 animOffset;
     Sound footstepsSource;
     
 
@@ -93,7 +93,7 @@ public class CharacterAppearance : MonoBehaviour
     {
         attackLungeOffset = Vector2.MoveTowards(attackLungeOffset,Vector2.zero,Time.deltaTime*1f);
         if (!cc.cm.rolling && lerp) { appearanceStepOffset = Vector2.MoveTowards(appearanceStepOffset, Vector2.zero, Time.deltaTime * 3f); }
-        appearanceTrans.localPosition = appearanceStepOffset + appearanceOffset + attackLungeOffset + new Vector2(animOffset.x*flipM,animOffset.y);
+        appearanceTrans.localPosition = appearanceStepOffset + appearanceOffset + attackLungeOffset + new Vector2(animData.animOffset.x*flipM,animData.animOffset.y);
     }
     float footstepWalkSFXT=0; float footstepRunSFXT=0;
     bool footstepsRunning =false;

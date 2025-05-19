@@ -8,8 +8,8 @@ public class PlayerAppearance : HumanoidAppearance
     public Light2D playerLight;
     public SimpleSpriteAnim slashFX;
 
-    
-    
+
+
     public void OnAttack()
     {
         if (Mathf.Abs(cc.cm.rb.linearVelocity.x) > 0.05f)

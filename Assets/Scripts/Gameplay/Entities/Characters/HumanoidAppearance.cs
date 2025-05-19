@@ -24,12 +24,6 @@ public class HumanoidAppearance : CharacterAppearance
     public SpriteRenderer feetSR;
     Vector2 normalHeadLoc;
 
-    public int animFeetIndex0;
-    public int animFeetIndex1;
-    public int animFeetSheetIndex;
-    public Vector2 animHeadOffset;
-    public Vector2 animHeldItemOffset;
-    public float animHeldItemRotation;
 
     public FeetSheet[] feetSheets;
 
@@ -60,19 +54,21 @@ public class HumanoidAppearance : CharacterAppearance
     }
     public void ManageAnimation()
     {
-        heldItemPoser.localPosition = animHeldItemOffset;
-        heldItemPoser.localRotation = Quaternion.Euler(0, 0, animHeldItemRotation);
-        headPoser.localPosition = animHeadOffset;
-        if (animFeetSheetIndex >= 0 && (animFeetIndex1 >= 0 || animFeetIndex0 >= 0))
+        HumanoidAnimData hAD = (HumanoidAnimData)animData;
+
+        heldItemPoser.localPosition = hAD.animHeldItemOffset;
+        heldItemPoser.localRotation = Quaternion.Euler(0, 0, hAD.animHeldItemRotation);
+        headPoser.localPosition = hAD.animHeadOffset + (Vector2.right * (!torsoClothed && headClothed ? 0.1f : 0));
+        if (hAD.animFeetSheetIndex >= 0 && (hAD.animFeetIndex1 >= 0 || hAD.animFeetIndex0 >= 0))
         {
-            feetSR.sprite = feetSheets[animFeetSheetIndex].sprites[animFeetIndex1 >= 0 ? animFeetIndex1 : animFeetIndex0];
+            feetSR.sprite = feetSheets[hAD.animFeetSheetIndex].sprites[hAD.animFeetIndex1 >= 0 ? hAD.animFeetIndex1 : hAD.animFeetIndex0];
         }
         if (!cc.cm.isJumpRising) { anim.SetBool("IsJumping", false); }
         bool isMoving = Mathf.Abs(cc.cm.inputMovement.x) > 0.1f;
         bool isSprinting = false;
         bool isWalking = isMoving; if (cc.cm.isSprinting && isMoving) { isSprinting = true; isWalking = false; }
-        anim.SetBool("IsWalking",isWalking);
-        anim.SetBool("IsSprinting",isSprinting);
+        anim.SetBool("IsWalking", isWalking);
+        anim.SetBool("IsSprinting", isSprinting);
     }
     public override void OnJump()
     {
@@ -85,4 +81,6 @@ public class HumanoidAppearance : CharacterAppearance
         base.OnLand();
         anim.SetTrigger("Land");
     }
+
 }
+
