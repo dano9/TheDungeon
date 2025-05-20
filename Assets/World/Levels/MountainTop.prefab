@@ -2945,9 +2945,9 @@ MonoBehaviour:
     reverbPreset: 18
   potency: 2
   zoom: 0
-  bounds: {x: -29.376516, y: 20.927654, z: 27.98641, w: -6.67}
+  bounds: {x: -29.376516, y: 20.927654, z: 27.98641, w: -4.1800003}
   mist: 0
-  origBounds: {x: -2.4965172, y: 33.107655, z: 54.86641, w: 5.51}
+  origBounds: {x: -2.4965172, y: 33.107655, z: 54.86641, w: 8}
   fitBoundsToBoxCol: 0
   fitBoxColToBounds: 0
   debugDrawBounds: 1
@@ -6242,7 +6242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
       propertyPath: bounds.w
-      value: -6.67
+      value: -4.1800003
       objectReference: {fileID: 0}
     - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
       propertyPath: bounds.x
@@ -6274,7 +6274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
       propertyPath: origBounds.w
-      value: 5.51
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8097517256172173740, guid: bca1eba8b0bd8a146be7700502badab0, type: 3}
       propertyPath: origBounds.y
