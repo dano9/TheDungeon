@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 10
@@ -273,7 +273,7 @@ TextureImporter:
         serializedVersion: 2
         x: 24
         y: 54
-        width: 6
+        width: 7
         height: 5
       alignment: 6
       pivot: {x: 0, y: 0}
@@ -285,6 +285,50 @@ TextureImporter:
       bones: []
       spriteID: b50f38054163fb947832f90fae59ea26
       internalID: 1421962242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandProto
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 56
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd6d1b1d15d1d64e9ef2d15e6b054d3
+      internalID: -526840744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hand
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 56
+        width: 3
+        height: 3
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd31c271ce1488429607cc90a66aa5b
+      internalID: -52327144
       vertices: []
       indices: 
       edges: []
@@ -303,6 +347,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Hand: -52327144
+      HandProto: -526840744
       Player: 161382862
       PlayerHead: 437264123
       PlayerHelm: -91172579

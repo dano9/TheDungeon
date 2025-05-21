@@ -39,7 +39,18 @@ public class PlayerController : CharacterController
 
         if (NewInput.controls.Gameplay.AttackPrimary.WasPressedThisFrame())
         {
+            if (curHeldItem != null)
+            {
+                curHeldItem.BeginUse();
+            }
             Attack(hitDetectionBox);
+        }
+        else if (NewInput.controls.Gameplay.AttackPrimary.WasReleasedThisFrame())
+        {
+            if (curHeldItem != null)
+            {
+                curHeldItem.EndUse();
+            }
         }
         
         // if (Input.GetKeyDown("f"))

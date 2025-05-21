@@ -65,6 +65,18 @@ public class UIMaster : MonoBehaviour
             curSwitchInterval = 0.45f;
         }
         lastMDist = imMag; lastMDir = imNorm;
+
+        if (selectedElement != null)
+        {
+            if (NewInput.controls.UI.Confirm.WasPressedThisFrame())
+            {
+                selectedElement.onConfirm.Invoke();
+            }
+        }
+    }
+    public void TestPress()
+    {
+        Debug.Log("Pressed Button!");
     }
 
     public void MoveSelection(Vector2 moveDir)

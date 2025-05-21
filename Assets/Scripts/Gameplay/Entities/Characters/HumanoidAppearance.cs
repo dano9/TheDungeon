@@ -27,8 +27,9 @@ public class HumanoidAppearance : CharacterAppearance
 
     public FeetSheet[] feetSheets;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         normalHeadLoc = headSR.transform.localPosition;
     }
 

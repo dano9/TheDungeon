@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Default Local Group
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
-  m_Data:
-    m_SerializedData: []
   m_GUID: 1dda8d1089e7da3488ef3beea1e6eebd
   m_SerializeEntries:
-  - m_GUID: dcd94ec1942acaa49abed6beba50c28a
-    m_Address: Assets/World/Levels/MountainTop.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 492be37284094ee4eb47156e729583ab
     m_Address: Assets/World/Levels/TempleInterior.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dcd94ec1942acaa49abed6beba50c28a
+    m_Address: Assets/World/Levels/MountainTop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1cc109eeb18f6b94fb308cfc6532dda3, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: d20bbf64dcabfc74fa48101d5d465a8e, type: 2}
     - {fileID: 11400000, guid: 3007f78051649cd4489407b900898db3, type: 2}
+    - {fileID: 11400000, guid: d20bbf64dcabfc74fa48101d5d465a8e, type: 2}

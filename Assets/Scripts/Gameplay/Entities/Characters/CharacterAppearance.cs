@@ -21,13 +21,49 @@ public class CharacterAppearance : MonoBehaviour
     public Vector2 appearanceOffset;
     public Vector2 attackLungeOffset;
     Sound footstepsSource;
-    
+    protected SpriteRenderer[] spriteRenderers;
 
+    protected virtual void Awake()
+    {
+        UpdateSRList();
+    }
     public void LateUpdate()
     {
         ManageAppearance();
         if (!Application.isPlaying) { return; }
         ManageSFX();
+
+        foreach (SpriteRenderer sr in spriteRenderers)
+        { }
+        //PixelSnapRelativeSR(sr); }
+    }
+    public void UpdateSRList()
+    {
+        spriteRenderers = transform.GetComponentsInChildren<SpriteRenderer>();
+    }
+    protected void PixelSnapRelativeSR(SpriteRenderer relSR, int pixelsPerUnit = 10)
+    {
+        if (relSR == null || relSR.sprite == null)
+            return;
+
+        Vector2 unitsPerPixel = Vector2.one / pixelsPerUnit;
+        unitsPerPixel.x /= transform.localScale.x;
+        //unitsPerPixel.y /= transform.localScale.y;
+
+        // Step 1: Get local offset of child relative to parent
+        Vector2 localOffset = transform.InverseTransformPoint(relSR.transform.position);
+
+        // Step 2: Snap local offset to nearest pixel in local space
+        Vector2 snappedLocalOffset = new Vector2(
+            Mathf.Round(localOffset.x / unitsPerPixel.x) * unitsPerPixel.x,
+            Mathf.Round(localOffset.y / unitsPerPixel.y) * unitsPerPixel.y
+        );
+
+        // Step 3: Convert snapped local offset back to world position
+        Vector2 snappedWorldPos = transform.TransformPoint(snappedLocalOffset);
+
+        // Step 4: Apply snapped position
+        relSR.transform.position = snappedWorldPos;
     }
     bool wasFacingLeft;
     float lastGT;

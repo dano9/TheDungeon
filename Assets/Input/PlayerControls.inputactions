@@ -27,7 +27,7 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "7dbc43c9-fa5c-46c9-a489-53c47acedb2a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -479,6 +479,28 @@
                     "name": "",
                     "id": "be5f9e85-1839-4712-b253-7b43593e002f",
                     "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "825237b5-89c5-468f-b934-3cb1d7de45a2",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10a66b93-e634-45e4-9ec2-810330d5aa02",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

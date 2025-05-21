@@ -8,7 +8,7 @@ public class CharacterController : Entity
     public CharacterMovement cm;
     public CharacterAppearance ca;
     //public Transform appearance;
-    //public HeldItem curHeldItem;
+    public HeldItem curHeldItem;
     //public List<Item> items;
     public List<Vector2Int> itemsSetup;
     public List<Vector2Int> itemDrops;

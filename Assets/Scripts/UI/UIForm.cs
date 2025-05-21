@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 
 [System.Serializable]
 public class UIElement
@@ -12,16 +12,19 @@ public class UIElement
     public Text text;
     bool active; public void SetActive(bool isActive) { active = isActive; }
     bool selected;
+    public UnityEvent onConfirm;
     UIForm parentForm; public void SetParentForm(UIForm pForm) { parentForm = pForm; } public UIForm GetParentForm() { return parentForm; }
     public void Select()
     {
         selected = true;
         if (text != null) { text.color = Color.white; }
+        rectTrans.localPosition = new Vector2(5, rectTrans.localPosition.y);
     }
     public void Deselect()
     {
         selected = false;
-        if (text != null) { text.color = Color.white*0.7f; }
+        if (text != null) { text.color = Color.white * 0.7f; }
+        rectTrans.localPosition = new Vector2(0, rectTrans.localPosition.y);
     }
 }
 public class UIForm : MonoBehaviour
@@ -62,7 +65,7 @@ public class UIForm : MonoBehaviour
     {
         foreach (UIElement element in elements)
         {
-            if (element == curSelectedEl) { continue; }
+            if (element == curSelectedEl || !element.rectTrans.gameObject.active) { continue; }
             Vector2 elDisp = element.rectTrans.position - curSelectedEl.rectTrans.position;
             Vector2 elDir = elDisp.normalized; float elDist = elDisp.magnitude;
             float dirDist = Vector2.Distance(elDir, direction);
@@ -78,10 +81,11 @@ public class UIForm : MonoBehaviour
         }
         return (curBestEl, curBestVal);
     }
-    public (UIElement, float) GetNearestElementInDirection(Vector2 curPos, Vector2 direction, float curBestVal, UIElement curBestEl=null)
+    public (UIElement, float) GetNearestElementInDirection(Vector2 curPos, Vector2 direction, float curBestVal, UIElement curBestEl = null)
     {
         foreach (UIElement element in elements)
         {
+            if (!element.rectTrans.gameObject.active){ continue; }
             Vector2 elDisp = (Vector2)element.rectTrans.position - curPos;
             Vector2 elDir = elDisp.normalized; float elDist = elDisp.magnitude;
             float dirDist = Vector2.Distance(elDir, direction);
