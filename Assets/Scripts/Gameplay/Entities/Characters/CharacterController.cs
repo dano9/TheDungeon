@@ -27,6 +27,7 @@ public class CharacterController : Entity
     public Color hitColor;
     public bool isDead=false;
     public bool keepInventory;
+    public bool readyForAttack=true;
     
     
     protected override void Start()

@@ -37,27 +37,30 @@ public class PlayerController : CharacterController
             return;
         }
 
-        if (NewInput.controls.Gameplay.AttackPrimary.WasPressedThisFrame())
+        //if (!cm.rolling)
         {
-            if (curHeldItem != null)
+            if (NewInput.controls.Gameplay.AttackPrimary.WasPressedThisFrame())
             {
-                curHeldItem.BeginUse();
+                if (curHeldItem != null)
+                {
+                    curHeldItem.BeginUse();
+                }
+                Attack(hitDetectionBox);
             }
-            Attack(hitDetectionBox);
-        }
-        else if (NewInput.controls.Gameplay.AttackPrimary.WasReleasedThisFrame())
-        {
-            if (curHeldItem != null)
+            else if (NewInput.controls.Gameplay.AttackPrimary.WasReleasedThisFrame())
             {
-                curHeldItem.EndUse();
+                if (curHeldItem != null)
+                {
+                    curHeldItem.EndUse();
+                }
             }
         }
         
         // if (Input.GetKeyDown("f"))
-        // {
-        //     Die();
-        // }  
-    }
+            // {
+            //     Die();
+            // }  
+        }
     public void Attack(BoxCollider2D attackArea)
     {
         // Get the bounds of the BoxCollider2D

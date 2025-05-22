@@ -53,7 +53,7 @@ public class WeaponHI : HeldItem
 
     public override bool BeginUse()
     {
-        if (!awaitingCooldown)
+        if (!awaitingCooldown && !cc.readyForAttack)
         {
             if (!isChargingAttack)
             {
@@ -130,6 +130,7 @@ public class WeaponHI : HeldItem
         isChargingAttack = true;
         chargePerc = 0; fullyChargedAttack = false;
         chargeUpTime = 0;
+        cc.ca.anim.SetTrigger("BeginAttack");
         anim.Play(curAttackMotion.animationName + "Charge");
         while (isChargingAttack && chargeUpTime < attackMotion.maxChargeUpTime && (!awaitingRelease || chargeUpTime < attackMotion.minChargeUpTime))
         {
@@ -147,6 +148,7 @@ public class WeaponHI : HeldItem
     float cooldownTime;
     public IEnumerator CooldownAttack()
     {
+        cc.ca.anim.SetBool("cancelDodge",false);
         cooldownTime = 0;
         awaitingCooldown = true;
         while (awaitingCooldown && cooldownTime < curAttackMotion.cooldownTime)
@@ -209,7 +211,7 @@ public class WeaponHI : HeldItem
             if (fullyChargedAttack)
             {
                 pitch *= 0.8f;
-                Debug.Log("FULLY CHARGED ATTACK!");
+                //Debug.Log("FULLY CHARGED ATTACK!");
             }
             SFXManager.main.PlaySoundAtPoint(curAttackMotion.sfxList[animData.sfxInit], transform.position, 1, 10, ptTime: 0f, pitch:pitch);
         }

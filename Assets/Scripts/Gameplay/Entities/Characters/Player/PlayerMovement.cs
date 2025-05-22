@@ -27,10 +27,10 @@ public class PlayerMovement : CharacterMovement
             inputMovement.x = flipM;
             //appearance.localRotation *= Quaternion.Euler(0,0,-rollRotateSpeed*flipM*Time.deltaTime);
             if (Time.time - lastDodgeT > dodgeRollTime || (Time.time - lastDodgeT > dodgeRollTime * 0.77f && Time.time - lastJumpPressT < preJumpTime)) {ExitDodgeRoll();}
-            else if (Time.time - lastDodgeT < dodgeRollTime *0.5f) {cc.ca.appearanceStepOffset = Vector2.MoveTowards(cc.ca.appearanceStepOffset,(Vector2.up*1f) + (Vector2.right*-flipM*0.1f),Time.deltaTime*5f);
+            else if (Time.time - lastDodgeT < dodgeRollTime *0.5f) {//cc.ca.appearanceStepOffset = Vector2.MoveTowards(cc.ca.appearanceStepOffset,(Vector2.up*1f) + (Vector2.right*-flipM*0.1f),Time.deltaTime*5f);
             if (Time.time - lastDodgeT > dodgeRollTime *0.25f) { pc.ca.cape.ResetBonePositions(lerpSpeed:20f);}
             }
-            else {cc.ca.appearanceStepOffset = Vector2.MoveTowards(cc.ca.appearanceStepOffset,Vector2.zero,Time.deltaTime*5f);
+            else {//cc.ca.appearanceStepOffset = Vector2.MoveTowards(cc.ca.appearanceStepOffset,Vector2.zero,Time.deltaTime*5f);
             if (!hasAppliedDodgeCapeForce) {cc.ca.cape.ApplyForce(new Vector2(-flipM*2, 0f),0.25f);hasAppliedDodgeCapeForce = true;}
             }
         }
@@ -60,13 +60,14 @@ public class PlayerMovement : CharacterMovement
     }
     public void DodgeRoll()
     {
+        cc.readyForAttack = false;
         //rb.velocity = Vector2.zero;
-        if (rb.linearVelocity.x * flipM < moveSpeed*0.6f) {rb.linearVelocity = new Vector2(moveSpeed*0.6f*flipM,rb.linearVelocity.y);}
+        if (rb.linearVelocity.x * flipM < moveSpeed * 0.6f) { rb.linearVelocity = new Vector2(moveSpeed * 0.6f * flipM, rb.linearVelocity.y); }
             //rb.velocity = new Vector2(rb.velocity.x * -0.8f,rb.velocity.y);}
         lastDodgeT = Time.time;
         isDodging = true;
         //disableJump = true;
-        rb.AddForce((Vector2.right * flipM * dodgeRollForce) + (Vector2.up * jumpForce*0.2f));
+        rb.AddForce((Vector2.right * flipM * dodgeRollForce) + (Vector2.up * jumpForce*0.1f));
         rolling = true;
         //appearance.localScale = new Vector3(appearance.localScale.x,0.85f,1);
         cc.ca.cape.ApplyForce(new Vector2(-flipM*10, 1f),0.15f);
@@ -79,6 +80,7 @@ public class PlayerMovement : CharacterMovement
         //appearance.localRotation = Quaternion.identity;
         //appearance.localScale = new Vector3(appearance.localScale.x,0.65f,1);
         if (cc.ca != null) {cc.ca.OnExitDodge();}
+        cc.readyForAttack = true;
         //appearance.localScale = Vector3.one;
     }
     public void ManageLookTarget()

@@ -52,8 +52,10 @@ public class HumanoidAppearance : CharacterAppearance
     }
     Vector2 headHIOffset;
     Vector2 headHIScale=Vector2.one;
+    int feetSheetHI;
+    int feetIndxHI;
     float headHIRot;
-    
+
     public void ManageFrontalFacing()
     {
         HeldItemAnimData hiAD = (cc.curHeldItem != null && cc.curHeldItem.animData != null) ? (HeldItemAnimData)cc.curHeldItem.animData : null;
@@ -68,6 +70,8 @@ public class HumanoidAppearance : CharacterAppearance
         bodyHIScale = hiAD != null ? hiAD.bodyScale : Vector2.one;
         headHIRot = hiAD != null ? hiAD.headRotation : 0;
         bodyHIRot = hiAD != null ? hiAD.bodyRotation : 0;
+        feetSheetHI = hiAD != null ? hiAD.feetSheetIndx : -1;
+        feetIndxHI = hiAD != null ? hiAD.feetIndx : -1;
     }
     public void ManageClothing()
     {
@@ -90,7 +94,11 @@ public class HumanoidAppearance : CharacterAppearance
         headPoser.localRotation = Quaternion.Euler(0, 0, headHIRot);
         //transform.localRotation = Quaternion.Euler(0, 0, bodyHIRot);
         //transform.localScale = bodyHIScale;
-        if (hAD.animFeetSheetIndex >= 0 && (hAD.animFeetIndex1 >= 0 || hAD.animFeetIndex0 >= 0))
+        if (feetIndxHI != -1 && feetSheetHI != -1)
+        {
+            feetSR.sprite = feetSheets[feetSheetHI].sprites[feetIndxHI];
+        }
+        else if (hAD.animFeetSheetIndex >= 0 && (hAD.animFeetIndex1 >= 0 || hAD.animFeetIndex0 >= 0))
         {
             feetSR.sprite = feetSheets[hAD.animFeetSheetIndex].sprites[hAD.animFeetIndex1 >= 0 ? hAD.animFeetIndex1 : hAD.animFeetIndex0];
         }

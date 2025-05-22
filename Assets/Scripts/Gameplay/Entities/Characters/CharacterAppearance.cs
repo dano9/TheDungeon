@@ -184,7 +184,9 @@ public class CharacterAppearance : MonoBehaviour
     }
     public virtual void OnDodge()
     {
-        SFXManager.main.PlaySoundAtPoint("Dodge/Default",transform.position,1,10);
+        SFXManager.main.PlaySoundAtPoint("Dodge/Default", transform.position, 1, 10);
+        //anim.SetBool("cancelDodge",false);
+        anim.SetTrigger("Dodge");
     }
     public virtual void OnExitDodge()
     {

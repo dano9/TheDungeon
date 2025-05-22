@@ -20,4 +20,6 @@ public class HeldItemAnimData : MonoBehaviour
     public float headRotation;
     public Vector2 headScale;
     public Vector2 bodyScale;
+    public int feetSheetIndx;
+    public int feetIndx=-1;
 }
