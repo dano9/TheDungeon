@@ -25,7 +25,7 @@ public class PlayerMovement : CharacterMovement
         if (isDodging)
         {
             inputMovement.x = flipM;
-            appearance.localRotation *= Quaternion.Euler(0,0,-rollRotateSpeed*flipM*Time.deltaTime);
+            //appearance.localRotation *= Quaternion.Euler(0,0,-rollRotateSpeed*flipM*Time.deltaTime);
             if (Time.time - lastDodgeT > dodgeRollTime || (Time.time - lastDodgeT > dodgeRollTime * 0.77f && Time.time - lastJumpPressT < preJumpTime)) {ExitDodgeRoll();}
             else if (Time.time - lastDodgeT < dodgeRollTime *0.5f) {cc.ca.appearanceStepOffset = Vector2.MoveTowards(cc.ca.appearanceStepOffset,(Vector2.up*1f) + (Vector2.right*-flipM*0.1f),Time.deltaTime*5f);
             if (Time.time - lastDodgeT > dodgeRollTime *0.25f) { pc.ca.cape.ResetBonePositions(lerpSpeed:20f);}
@@ -37,7 +37,8 @@ public class PlayerMovement : CharacterMovement
         else
         {
             hasAppliedDodgeCapeForce = false;
-            appearance.localScale = new Vector3(appearance.localScale.x,Mathf.MoveTowards(appearance.localScale.y,1,Time.deltaTime*2f),1);
+            //appearance.localScale = new Vector3(appearance.localScale.x,Mathf.MoveTowards(appearance.localScale.y,1,Time.deltaTime*2f),1);
+
             disableJump = false;
             inputMovement =NewInput.GetMovement(); //new Vector2(ControlsManager.GetAxis("PrimaryXAxis"),ControlsManager.GetAxis("PrimaryYAxis"));//Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             
@@ -67,7 +68,7 @@ public class PlayerMovement : CharacterMovement
         //disableJump = true;
         rb.AddForce((Vector2.right * flipM * dodgeRollForce) + (Vector2.up * jumpForce*0.2f));
         rolling = true;
-        appearance.localScale = new Vector3(appearance.localScale.x,0.85f,1);
+        //appearance.localScale = new Vector3(appearance.localScale.x,0.85f,1);
         cc.ca.cape.ApplyForce(new Vector2(-flipM*10, 1f),0.15f);
         if (cc.ca != null) {cc.ca.OnDodge();}
     }
@@ -75,8 +76,8 @@ public class PlayerMovement : CharacterMovement
     {
         isDodging = false; 
         rolling = false; 
-        appearance.localRotation = Quaternion.identity;
-        appearance.localScale = new Vector3(appearance.localScale.x,0.65f,1);
+        //appearance.localRotation = Quaternion.identity;
+        //appearance.localScale = new Vector3(appearance.localScale.x,0.65f,1);
         if (cc.ca != null) {cc.ca.OnExitDodge();}
         //appearance.localScale = Vector3.one;
     }

@@ -1716,18 +1716,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInFront: 0
-  itemFlip: 0
-  fxInit: 0
-  fXPos: {x: 0, y: 0}
+  sfxInit: -1
+  fxInit: -1
+  fXPos: {x: 0, y: 0.4}
+  fxScale: {x: 1, y: 1}
   fxRot: 0
   flipBodyLeft: 0
   flipBodyFront: 0
+  flipHeadFront: 0
+  flipTorsoFront: 0
   bodyOffset: {x: 0, y: 0}
   headOffset: {x: 0, y: 0}
   bodyRotation: 0
   headRotation: 0
-  headScale: {x: 0, y: 0}
-  bodyScale: {x: 0, y: 0}
+  headScale: {x: 1, y: 1}
+  bodyScale: {x: 1, y: 1}
 --- !u!114 &58749294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,9 +1752,18 @@ MonoBehaviour:
     description: 
   animData: {fileID: 58749293}
   anim: {fileID: 58749292}
+  cc: {fileID: 1773453155}
+  spriteRenderers:
+  - {fileID: 102699948}
   defaultCarryStance: WeaponIdleCarry0
+  slashFXOffset: {x: 0, y: 0.2}
+  slashFXScale: {x: 1, y: 0.6}
   sideAttackAnimations:
   - animationName: LightSideSlash0
+    fxList:
+    - Attacks/Swipes/MidRnge
+    sfxList:
+    - Weapons/Sword/Slash/Light
     minChargeUpTime: 0.05
     maxChargeUpTime: 0.5
     cooldownTime: 0.2
@@ -1759,6 +1771,10 @@ MonoBehaviour:
     dmgImpactDelay: 0
     dmgMultiplier: 1
   - animationName: LightSideSlash1
+    fxList:
+    - Attacks/Swipes/MidRnge
+    sfxList:
+    - Weapons/Sword/Slash/Light
     minChargeUpTime: 0.05
     maxChargeUpTime: 0.5
     cooldownTime: 0.2
@@ -1844,7 +1860,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: -878861339, guid: b42c286389830e1469d870f173cfaccd, type: 3}
+  m_Sprite: {fileID: -1659970542, guid: b42c286389830e1469d870f173cfaccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2607,9 +2623,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.15229885
     y: 0
-    width: 1
+    width: 0.6954023
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -3339,7 +3355,7 @@ Transform:
   - {fileID: 102699947}
   - {fileID: 1956054395}
   m_Father: {fileID: 111122538}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 415.776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &912291109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3743,6 +3759,7 @@ Transform:
   m_Children:
   - {fileID: 12117094}
   - {fileID: 1848454871}
+  - {fileID: 1656381587}
   - {fileID: 741593862}
   - {fileID: 944914206}
   - {fileID: 1517130813}
@@ -4252,7 +4269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415701926}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4682,6 +4699,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1656381586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1656381587}
+  - component: {fileID: 1656381588}
+  m_Layer: 0
+  m_Name: FXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1656381587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656381586}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.5110326, y: 0.16835779, z: -0.8118378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1720147915}
+  m_Father: {fileID: 1080167205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1656381588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656381586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93f4c01769248445992e2548b149eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxCategories:
+  - categoryName: Attacks
+    subCategories:
+    - categoryName: Swipes
+      subCategories: []
+      effectlists:
+      - fxName: MidRnge
+        lastFXUsed: 0
+        effects:
+        - sprites:
+          - {fileID: -1217564755, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+          - {fileID: 1450927641, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+          - {fileID: -1351301618, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+          - {fileID: 2107954874, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+          - {fileID: -231268900, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+          - {fileID: -1791388711, guid: aa44137cf08bd3348b82c6ffc6f8c672, type: 3}
+          interval: 0.04
+          scale: {x: 1, y: 1}
+          color: {r: 1, g: 1, b: 1, a: 1}
+    effectlists: []
+  freeFX: []
+  effects: []
+  fxPrefab: {fileID: 8087249893307459965, guid: debb798519518f242985c77099dc8ba7, type: 3}
+  fxInstances: 8
 --- !u!1 &1714060884
 GameObject:
   m_ObjectHideFlags: 0
@@ -4797,6 +4883,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1720147914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720147915}
+  - component: {fileID: 1720147916}
+  m_Layer: 0
+  m_Name: Audio Reverb Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1720147915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720147914}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.942834, y: 0.051972017, z: 0.88071394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1656381587}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!167 &1720147916
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720147914}
+  m_Enabled: 1
+  m_MinDistance: 1000
+  m_MaxDistance: 1000
+  m_ReverbPreset: 18
+  m_Room: -1000
+  m_RoomHF: -2500
+  m_DecayTime: 1.49
+  m_DecayHFRatio: 0.21
+  m_Reflections: -2780
+  m_ReflectionsDelay: 0.3
+  m_Reverb: -1434
+  m_ReverbDelay: 0.1
+  m_HFReference: 5000
+  m_Diffusion: 27
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1 &1723312182
 GameObject:
   m_ObjectHideFlags: 0
@@ -5501,6 +5643,10 @@ MonoBehaviour:
   animData: {fileID: 1949454469}
   anim: {fileID: 1949454468}
   flipM: 0
+  flipFront: 0
+  flipHead: 0
+  flipTorso: 0
+  flipBodyLeftHI: 0
   appearanceStepOffset: {x: 0, y: 0}
   appearanceOffset: {x: 0, y: 0}
   attackLungeOffset: {x: 0, y: 0}
@@ -5510,6 +5656,7 @@ MonoBehaviour:
   bootsColor: {r: 0.24705884, g: 0.22352943, b: 0.20000002, a: 1}
   feetColorl: {r: 1, g: 1, b: 1, a: 1}
   headPoser: {fileID: 1415701927}
+  torsoPoser: {fileID: 0}
   heldItemPoser: {fileID: 111122538}
   helmetSR: {fileID: 790288417}
   torsoClothesSR: {fileID: 309472851}
@@ -5682,7 +5829,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4af369cd3c05144b9b1053da3cacc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animScale: {x: 1, y: 1}
   animOffset: {x: 0, y: 0}
+  animRotation: 0
   animFeetIndex0: 0
   animFeetIndex1: 0
   animFeetSheetIndex: 0
@@ -5966,8 +6115,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.72
-  m_PointLightOuterRadius: 1.8435527
+  m_PointLightInnerRadius: 2.81
+  m_PointLightOuterRadius: 2.86
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

@@ -10,6 +10,10 @@ public class CharacterAppearance : MonoBehaviour
     public CharacterAnimData animData;
     public Animator anim;
     public float flipM;
+    public bool flipFront;
+    public bool flipHead;
+    public bool flipTorso;
+    public bool flipBodyLeftHI;
 
     protected float movePerc;
     protected float fallPerc;
@@ -22,6 +26,10 @@ public class CharacterAppearance : MonoBehaviour
     public Vector2 attackLungeOffset;
     Sound footstepsSource;
     protected SpriteRenderer[] spriteRenderers;
+
+    protected Vector2 bodyHIOffset;
+    protected Vector2 bodyHIScale=Vector2.one;
+    protected float bodyHIRot;
 
     protected virtual void Awake()
     {
@@ -70,20 +78,28 @@ public class CharacterAppearance : MonoBehaviour
     bool wasOnG;
     public virtual void ManageAppearance()
     {
-        flipM = (cc.facingLeft ? -1 : 1);
+        
+        //flipHead = cc.curHeldItem.animData.flipHeadFront;
+        //flipTorso = cc.curHeldItem.animData.flipTorsoFront;
+
+        //flipM = (cc.facingLeft ? -1 : 1);
+        flipM = flipBodyLeftHI ^ cc.facingLeft ? -1 : 1;
         movePerc = Mathf.Clamp01(Mathf.Abs(cc.rb.linearVelocity.x) / cc.cm.moveSpeed);
         fallPerc = Mathf.Clamp01(-cc.rb.linearVelocity.y / cc.cm.maxVelocity);
         jumpPerc = Mathf.Clamp01(cc.rb.linearVelocity.y / cc.cm.maxVelocity);
         yVelocPerc = Mathf.Clamp(cc.rb.linearVelocity.y / cc.cm.maxVelocity, -1, 1);
         jogYOffset = 0f;
-        jogYOffsetRound = 0f; ;
+        jogYOffsetRound = 0f;
         if (cc.cm.isSprinting && cc.cm.inputMovement.x != 0)
         {
             jogYOffset = (Mathf.Sin(Time.time * 10f) + 1f) * 0.5f;
             jogYOffsetRound = Mathf.Round(jogYOffset) * 0.1f; jogYOffset *= 0.1f;
         }
 
-        appearanceTrans.localScale = new Vector3(flipM, appearanceTrans.localScale.y, 1);
+        appearanceTrans.localScale = new Vector3(flipM * bodyHIScale.x*animData.animScale.x, bodyHIScale.y*animData.animScale.y, 1);
+        float appearRotation = animData.animRotation + bodyHIRot;
+        if (flipM < 0) { appearRotation = (360 - appearRotation); }
+        appearanceTrans.localRotation = Quaternion.Euler(0, 0, appearRotation);
         //appearanceOffset.y = jogYOffsetRound;
         //appearanceOffset.x = jogYOffsetRound * flipM;
         ApplyOffset(true);
@@ -103,7 +119,8 @@ public class CharacterAppearance : MonoBehaviour
 
     public void ManageCape()
     {
-        if (wasFacingLeft != cc.facingLeft) {cape.ApplyForce(new Vector2(-flipM*2f, 0.2f),0.2f);}
+        cape.sR.sortingOrder = flipFront ^ flipTorso ? 10 : 1;
+        if (wasFacingLeft != cc.facingLeft) { cape.ApplyForce(new Vector2(-flipM * 2f, 0.2f), 0.2f); }
         //float jogYOffset = cm.isSprinting && movePerc>0 ? ((Mathf.Sin(Time.time*10f))+1f)*0.5f: 0;
         bool facingWind = (flipM * cape.windDirection.x < 0);
         cape.windMulti = facingWind ? 1 : 0.2f;
@@ -129,7 +146,7 @@ public class CharacterAppearance : MonoBehaviour
     {
         attackLungeOffset = Vector2.MoveTowards(attackLungeOffset,Vector2.zero,Time.deltaTime*1f);
         if (!cc.cm.rolling && lerp) { appearanceStepOffset = Vector2.MoveTowards(appearanceStepOffset, Vector2.zero, Time.deltaTime * 3f); }
-        appearanceTrans.localPosition = appearanceStepOffset + appearanceOffset + attackLungeOffset + new Vector2(animData.animOffset.x*flipM,animData.animOffset.y);
+        appearanceTrans.localPosition = appearanceStepOffset + appearanceOffset + attackLungeOffset + new Vector2((animData.animOffset.x+bodyHIOffset.x)*flipM,animData.animOffset.y+bodyHIOffset.y);
     }
     float footstepWalkSFXT=0; float footstepRunSFXT=0;
     bool footstepsRunning =false;

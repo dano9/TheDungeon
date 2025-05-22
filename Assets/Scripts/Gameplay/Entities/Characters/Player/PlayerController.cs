@@ -76,7 +76,7 @@ public class PlayerController : CharacterController
             }
         }
 
-        ((PlayerAppearance)ca).OnAttack();
+        //((PlayerAppearance)ca).OnAttack();
     }
     public void GoToPassage(Passage passage)
     {

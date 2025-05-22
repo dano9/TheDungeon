@@ -94,7 +94,7 @@ public class SFXManager : MonoBehaviour
         }
     }
 
-    public Sound PlaySoundAtPoint(string sndAddress, Vector3 pos, float volume, int priority, bool loop = false, Sound snd = null, int sndIndex = -1, float duration=0f, float ptTime=0f)
+    public Sound PlaySoundAtPoint(string sndAddress, Vector3 pos, float volume, int priority, bool loop = false, Sound snd = null, int sndIndex = -1, float duration = 0f, float ptTime = 0f, float pitch = 1f)
     {
         if (snd == null && freeSounds.Count > 0)
         {
@@ -118,6 +118,7 @@ public class SFXManager : MonoBehaviour
             snd.volume = volume;
             snd.source.volume = volume;
             snd.source.time = ptTime;
+            snd.source.pitch = pitch;
             snd.source.gameObject.SetActive(true);
 
             ClipsList cL = clipsLists[sndAddress];//GetClipsListFromAddress(sndAddress);
