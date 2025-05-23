@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ColliderGenerator : MonoBehaviour
 {
-    //private static bool[,] visited;
 
-    public static void SpriteBoxColsGen(Transform obj, float scaleM=1f, PhysicsMaterial2D physicMaterial=null, bool simpleCols=false, bool triggers=false)
+    public static void SpriteBoxColsGen(Transform obj, List<Rect> boxes, PhysicsMaterial2D physicMaterial, float scaleM=1f,bool triggers=false)
     {
         Collider2D[] eBoxCols = obj.GetComponents<Collider2D>();
         for (int b = 0; b < eBoxCols.Length; b++)
@@ -14,18 +13,35 @@ public class ColliderGenerator : MonoBehaviour
             Destroy(eBoxCols[b]);
         }
         Sprite sprite = obj.GetComponent<SpriteRenderer>().sprite;
+        foreach (var box in boxes)
+        {
+            Rect localBox = new Rect((box.position - sprite.pivot - (Vector2.one * 0f)) / sprite.pixelsPerUnit, box.size / sprite.pixelsPerUnit);
+            BoxCollider2D boxCol = obj.gameObject.AddComponent<BoxCollider2D>();
+            boxCol.size = localBox.size * scaleM;
+            boxCol.offset = localBox.position + (localBox.size / 2);
+            boxCol.isTrigger = triggers;
+            if (physicMaterial != null) { boxCol.sharedMaterial = physicMaterial; }
+        }
+    }
+    public static void SpriteBoxColsGen(Transform obj, float scaleM = 1f, PhysicsMaterial2D physicMaterial = null, bool simpleCols = false, bool triggers = false)
+    {
+        Sprite sprite = obj.GetComponent<SpriteRenderer>().sprite;
+        SpriteBoxColsGen(obj, GetRectBoxes(sprite, simpleCols), physicMaterial, scaleM, triggers);
+    }
+    public static List<Rect> GetRectBoxes(Sprite sprite, bool simpleCols = false)
+    {
         Texture2D texture = sprite.texture;
         if (sprite.rect.size.x != texture.width || sprite.rect.size.y != texture.height)
         {
             Texture2D newTex = new Texture2D((int)sprite.rect.size.x, (int)sprite.rect.size.y, TextureFormat.RGBA32, false);
             {
-                int lx = (int)sprite.rect.position.x; int ux = lx +  newTex.width;
-                int ly = (int)sprite.rect.position.y; int uy = ly +  newTex.height;
+                int lx = (int)sprite.rect.position.x; int ux = lx + newTex.width;
+                int ly = (int)sprite.rect.position.y; int uy = ly + newTex.height;
                 for (int x = lx; x < ux; x++)
                 {
                     for (int y = ly; y < uy; y++)
                     {
-                        newTex.SetPixel(x-lx,y-ly,texture.GetPixel(x,y));
+                        newTex.SetPixel(x - lx, y - ly, texture.GetPixel(x, y));
                     }
                 }
             }
@@ -34,30 +50,19 @@ public class ColliderGenerator : MonoBehaviour
             texture = newTex;
         }
         List<Rect> boxes = null;
-        if (!simpleCols) {boxes = FindPreciseBoxes(texture);}
-        else {boxes = FindSimpleBoxes(texture);}
-        foreach (var box in boxes)
-        {
-            // Debug.Log($"Box found at position {box.position} with size {box.size}");
-            // Rect worldBox = new Rect((Vector2)obj.transform.position + ((box.position - sprite.pivot) / sprite.pixelsPerUnit), box.size / sprite.pixelsPerUnit);
-            // Debug.DrawLine(worldBox.position, worldBox.position + worldBox.size, Color.red, 10f);
-            Rect localBox = new Rect((box.position - sprite.pivot - (Vector2.one*0f)) / sprite.pixelsPerUnit, box.size / sprite.pixelsPerUnit);
-            BoxCollider2D boxCol = obj.gameObject.AddComponent<BoxCollider2D>();
-            boxCol.size = localBox.size*scaleM;
-            boxCol.offset = localBox.position + (localBox.size/2);
-            boxCol.isTrigger = triggers;
-            if (physicMaterial != null) {boxCol.sharedMaterial = physicMaterial;}
-        }
+        if (!simpleCols) { boxes = FindPreciseBoxes(texture); }
+        else { boxes = FindSimpleBoxes(texture); }
+        return boxes;
     }
 
-    public static List<Rect> FindPreciseBoxes(Texture2D texture, float alphaThreshold = 0.1f, int skipVal=1)
+    public static List<Rect> FindPreciseBoxes(Texture2D texture, float alphaThreshold = 0.1f, int skipVal = 1)
     {
         int width = texture.width;
         int height = texture.height;
-        
+
         List<Rect> rectangles = new List<Rect>();
         bool[,] visited = new bool[width, height];
-        
+
         // Iterate every 2 pixels for efficiency
         for (int y = 0; y < height; y += skipVal)
         {
@@ -68,13 +73,13 @@ public class ColliderGenerator : MonoBehaviour
                     continue;
 
                 // Find the rectangle for this block of connected opaque pixels
-                Rect rect = FindRectangle(texture, x, y, visited, alphaThreshold,skipVal);
+                Rect rect = FindRectangle(texture, x, y, visited, alphaThreshold, skipVal);
 
                 // Add the rectangle to the list
                 rectangles.Add(rect);
             }
         }
-        
+
         return rectangles;
     }
 

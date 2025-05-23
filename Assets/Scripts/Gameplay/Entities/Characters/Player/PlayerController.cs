@@ -75,7 +75,7 @@ public class PlayerController : CharacterController
             Hittable hittable = hit.GetComponent<Hittable>();
             if (hittable != null)
             {
-                hittable.TakeHit(1); // Example damage amount
+                hittable.TakeHit(1, Vector2.right * -ca.flipM * 5f); // Example damage amount
             }
         }
 

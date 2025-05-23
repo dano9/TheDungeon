@@ -63,7 +63,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -139,15 +139,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MiscellaneousObjects0_0
+      name: WoodTable0
       rect:
         serializedVersion: 2
         x: 8
         y: 53
         width: 13
         height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -161,15 +161,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiscellaneousObjects0_1
+      name: WoodCrate0
       rect:
         serializedVersion: 2
         x: 22
         y: 53
         width: 9
         height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -183,15 +183,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiscellaneousObjects0_2
+      name: SmallPot
       rect:
         serializedVersion: 2
         x: 31
-        y: 53
+        y: 57
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +213,7 @@ TextureImporter:
         width: 7
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -235,7 +235,7 @@ TextureImporter:
         width: 7
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -257,7 +257,7 @@ TextureImporter:
         width: 7
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -279,7 +279,7 @@ TextureImporter:
         width: 7
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -301,7 +301,7 @@ TextureImporter:
         width: 11
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -323,7 +323,7 @@ TextureImporter:
         width: 10
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -345,7 +345,7 @@ TextureImporter:
         width: 17
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -367,7 +367,7 @@ TextureImporter:
         width: 8
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -389,7 +389,7 @@ TextureImporter:
         width: 11
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -411,7 +411,7 @@ TextureImporter:
         width: 19
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -433,7 +433,7 @@ TextureImporter:
         width: 21
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -446,11 +446,77 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: MiscellaneousObjects0_14
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 60
+        width: 4
+        height: 3
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e0ed741023af541b93f9b58a8fc4d6
+      internalID: 509162487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LargePot
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 44
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7accd52fb7739e446a921b6ba5f6a019
+      internalID: 1332030388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MediumPot
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 50
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a0f7bd43ae4ca42a4569a0965dda84
+      internalID: 1941543905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f1106d549eee2bf4dba962c6f738f442
     internalID: 0
     vertices: []
     indices: 
@@ -460,13 +526,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MiscellaneousObjects0_0: -4471579203429487171
-      MiscellaneousObjects0_1: 7744349643750835059
+      LargePot: 1332030388
+      MediumPot: 1941543905
       MiscellaneousObjects0_10: -6855222170808473618
       MiscellaneousObjects0_11: 9021655293804243285
       MiscellaneousObjects0_12: -6175090411414173850
       MiscellaneousObjects0_13: -6882646736130584152
-      MiscellaneousObjects0_2: 9092294906265766516
+      MiscellaneousObjects0_14: 509162487
       MiscellaneousObjects0_3: 443758305433178086
       MiscellaneousObjects0_4: -9053561887615185512
       MiscellaneousObjects0_5: 5172536761023172219
@@ -474,6 +540,9 @@ TextureImporter:
       MiscellaneousObjects0_7: 6678337986680907195
       MiscellaneousObjects0_8: 2158524620956498998
       MiscellaneousObjects0_9: -6872734859827496532
+      SmallPot: 9092294906265766516
+      WoodCrate0: 7744349643750835059
+      WoodTable0: -4471579203429487171
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
