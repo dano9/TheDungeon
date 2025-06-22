@@ -13,15 +13,15 @@ public class ItemDataManager : MonoBehaviour
 
     void Start()
     {
-        if (setupDataDictFromSO)
-        {
-            SetupDataDictFromSO();
-        }
-        else
-        {
-            AddHeldItemsToDict();
-            UpdateSO();
-        }
+        // if (setupDataDictFromSO)
+        // {
+        //     SetupDataDictFromSO();
+        // }
+        // else
+        // {
+        //     AddHeldItemsToDict();
+        //     UpdateSO();
+        // }
     }
 
     public void SetupDataDictFromSO()

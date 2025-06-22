@@ -8,6 +8,7 @@ public class HeldItemAnimData : MonoBehaviour
     public Vector2 fXPos;
     public Vector2 fxScale;
     public float fxRot;
+    public Vector2 hitDirection;
 
     public bool flipBodyLeft;
     public bool flipBodyFront;
@@ -21,5 +22,5 @@ public class HeldItemAnimData : MonoBehaviour
     public Vector2 headScale;
     public Vector2 bodyScale;
     public int feetSheetIndx;
-    public int feetIndx=-1;
+    public int feetIndx = -1;
 }

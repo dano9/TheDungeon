@@ -28,6 +28,7 @@ public class CharacterController : Entity
     public bool isDead=false;
     public bool keepInventory;
     public bool readyForAttack=true;
+    public Vector2 attackDirection;
     
     
     protected override void Start()
@@ -51,11 +52,11 @@ public class CharacterController : Entity
     {
         health -= dmg;
         lastDmgTime = Time.time;
-        spriteRenderer.color = hitColor;
+        if (spriteRenderer != null) { spriteRenderer.color = hitColor; }
         if (health <= 0)
         {
             health = 0;
-            spriteRenderer.color = normalCol;
+            if (spriteRenderer != null) { spriteRenderer.color = normalCol; }
             if (hitType == 0)
             {
                 KillNormal();
@@ -123,7 +124,7 @@ public class CharacterController : Entity
     // {
     //     TakeDamage(projectile.damage);
     // }
-    public override void OnMeleeHit(float dmg)
+    public override void OnHit(float dmg, Vector2 hitDir)
     {
         TakeDamage(dmg);
     }

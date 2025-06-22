@@ -25,7 +25,7 @@ public class Entity : MonoBehaviour
     // {
         
     // }
-    public virtual void OnMeleeHit(float dmg)
+    public virtual void OnHit(float dmg, Vector2 hitDir)
     {
 
     }

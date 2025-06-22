@@ -39,13 +39,20 @@ public class PlayerController : CharacterController
 
         //if (!cm.rolling)
         {
+            Vector2 movement = NewInput.GetMovement();
+            attackDirection = Vector2.right * (facingLeft ? -1 : 1); 
+            if (movement == Vector2.zero) { }
+            else
+            {
+                if (movement.y > 0) { attackDirection = Vector2.up; }
+                else { attackDirection = Vector2.down; }
+            }
             if (NewInput.controls.Gameplay.AttackPrimary.WasPressedThisFrame())
             {
                 if (curHeldItem != null)
                 {
                     curHeldItem.BeginUse();
                 }
-                Attack(hitDetectionBox);
             }
             else if (NewInput.controls.Gameplay.AttackPrimary.WasReleasedThisFrame())
             {
@@ -61,26 +68,7 @@ public class PlayerController : CharacterController
             //     Die();
             // }  
         }
-    public void Attack(BoxCollider2D attackArea)
-    {
-        // Get the bounds of the BoxCollider2D
-        Bounds bounds = attackArea.bounds;
 
-        // Get all colliders in the box
-        Collider2D[] hits = Physics2D.OverlapBoxAll(bounds.center, bounds.size, 0f, hittableLayers);
-
-        foreach (Collider2D hit in hits)
-        {
-            // Example: Call TakeDamage if object has IHittable component
-            Hittable hittable = hit.GetComponent<Hittable>();
-            if (hittable != null)
-            {
-                hittable.TakeHit(1, Vector2.right * -ca.flipM * 5f); // Example damage amount
-            }
-        }
-
-        //((PlayerAppearance)ca).OnAttack();
-    }
     public void GoToPassage(Passage passage)
     {
         cm.onGround = false;

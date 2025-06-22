@@ -21,15 +21,15 @@ public class WeaponHI : HeldItem
 {
     //public int carryStanceType;
     public CharacterController cc;
+    public float damage; public float hitForce;
     public SpriteRenderer[] spriteRenderers;
     public string defaultCarryStance;
     public Vector2 slashFXOffset;
     public Vector2 slashFXScale = Vector2.one;
     public AttackMotion[] sideAttackAnimations;
     public AttackMotion[] overheadAttackAnimations;
-    public AttackMotion[] AttackAnimations;
 
-    public BoxCollider2D hitDetectionRadius;
+    public BoxCollider2D hitboxCol;
 
 
     bool isChargingAttack;
@@ -57,7 +57,7 @@ public class WeaponHI : HeldItem
         {
             if (!isChargingAttack)
             {
-                return BeginAttack();
+                return BeginAttack(cc.attackDirection);
             }
             else { useQueue.Add(Time.time); }
         }
@@ -71,6 +71,7 @@ public class WeaponHI : HeldItem
     {
         ManageQueuedAttacks();
         ManageAnimation();
+        ManageHitBox();
     }
     public override bool EndUse()
     {
@@ -89,15 +90,20 @@ public class WeaponHI : HeldItem
         else if (useQueue.Count > 0) { queueReleased = true; }
         return false;
     }
-    public virtual bool BeginAttack()
+    int attackType;
+    public virtual bool BeginAttack(Vector2 attackDir)
     {
+        if (Mathf.Abs(attackDir.x) >= Mathf.Abs(attackDir.y)) { attackType = 0; }
         if (!isChargingAttack)
         {
+            AttackMotion attackM=new AttackMotion();
+            if (attackType == 0) { atckIndx %= sideAttackAnimations.Length; attackM = sideAttackAnimations[atckIndx]; } //Side
+            if (attackType == 1) { atckIndx %= overheadAttackAnimations.Length; attackM = overheadAttackAnimations[atckIndx]; } //Overhead
             chargePerc = 0; fullyChargedAttack = false;
-            chargeCoroutine = StartCoroutine(ChargeAttack(sideAttackAnimations[atckIndx]));
+            chargeCoroutine = StartCoroutine(ChargeAttack(attackM));
             isChargingAttack = true;
             atckIndx += 1;
-            atckIndx %= sideAttackAnimations.Length;
+
             return true;
         }
         else
@@ -148,7 +154,7 @@ public class WeaponHI : HeldItem
     float cooldownTime;
     public IEnumerator CooldownAttack()
     {
-        cc.ca.anim.SetBool("cancelDodge",false);
+        cc.ca.anim.SetBool("cancelDodge", false);
         cooldownTime = 0;
         awaitingCooldown = true;
         while (awaitingCooldown && cooldownTime < curAttackMotion.cooldownTime)
@@ -178,7 +184,7 @@ public class WeaponHI : HeldItem
                 {
                     useQueue.RemoveAt(i);
                     if (queueReleased) { awaitingRelease = true; queueReleased = false; }
-                    BeginAttack();
+                    BeginAttack(cc.attackDirection);
                 }
             }
             else
@@ -213,7 +219,7 @@ public class WeaponHI : HeldItem
                 pitch *= 0.8f;
                 //Debug.Log("FULLY CHARGED ATTACK!");
             }
-            SFXManager.main.PlaySoundAtPoint(curAttackMotion.sfxList[animData.sfxInit], transform.position, 1, 10, ptTime: 0f, pitch:pitch);
+            SFXManager.main.PlaySoundAtPoint(curAttackMotion.sfxList[animData.sfxInit], transform.position, 1, 10, ptTime: 0f, pitch: pitch);
         }
         else if (animData.sfxInit < 0) { readyForSfx = true; }
 
@@ -222,5 +228,18 @@ public class WeaponHI : HeldItem
             int targSOrder = (animData.itemInFront ? 9 : 2) + s;
             if (spriteRenderers[s].sortingOrder != targSOrder) { spriteRenderers[s].sortingOrder = targSOrder; }
         }
+    }
+    HitboxDetection.Hitbox hitbox;
+    public void ManageHitBox()
+    {
+        bool enableHB = hitboxCol.enabled;
+        if (enableHB)
+        {
+            if (hitbox == null)
+            {
+                hitbox = HitboxDetection.main.AddHitbox(hitboxCol, new Vector2(animData.hitDirection.x * -(cc.facingLeft ? -1 : 1),animData.hitDirection.y) * hitForce, damage, 10f, -1f);
+            }
+        }
+        else if (hitbox != null) { hitbox = HitboxDetection.main.RemoveHitbox(hitbox); }
     }
 }

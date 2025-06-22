@@ -47,8 +47,9 @@ public class ShatterFunc : MonoBehaviour
 
             shardTrans.GetComponent<Rigidbody2D>().AddForce(force);//(shardForce.normalized * force.magnitude));// + (force*1.5f));//new Vector2(Random.Range(-1f,1f),Random.Range(-1f,1f)) * 2f);
 
-            if (isBackground) { shardTrans.gameObject.layer = 9; }
-            else { shardTrans.gameObject.layer = obj.gameObject.layer == 0 ? 6 : obj.gameObject.layer; }
+            //if (isBackground)
+            { shardTrans.gameObject.layer = 7; }
+            //else { shardTrans.gameObject.layer = obj.gameObject.layer == 0 ? 6 : obj.gameObject.layer; }
             shardTrans.GetComponent<SpriteRenderer>().sortingOrder = sr.sortingOrder + 1;
         }
         sr.enabled = false;
