@@ -44,8 +44,9 @@ public class PlayerController : CharacterController
             if (movement == Vector2.zero) { }
             else
             {
-                if (movement.y > 0) { attackDirection = Vector2.up; }
-                else { attackDirection = Vector2.down; }
+                attackDirection.x = movement.x;
+                if (movement.y > 0.5f) { attackDirection.y = 1; }
+                else if (movement.y < -0.5f){ attackDirection.y = -1; }
             }
             if (NewInput.controls.Gameplay.AttackPrimary.WasPressedThisFrame())
             {

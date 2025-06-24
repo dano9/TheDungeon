@@ -15,20 +15,23 @@ public struct AttackMotion
     public float endLingerTime;
     public float dmgImpactDelay;
     public float dmgMultiplier;
+    public Vector2 attackDir;
+    public Vector2 hitboxScale;
 
 }
+[ExecuteInEditMode]
 public class WeaponHI : HeldItem
 {
     //public int carryStanceType;
     public CharacterController cc;
     public float damage; public float hitForce;
+    public float range = 1f;
     public SpriteRenderer[] spriteRenderers;
     public string defaultCarryStance;
     public Vector2 slashFXOffset;
     public Vector2 slashFXScale = Vector2.one;
     public AttackMotion[] sideAttackAnimations;
     public AttackMotion[] overheadAttackAnimations;
-
     public BoxCollider2D hitboxCol;
 
 
@@ -46,6 +49,7 @@ public class WeaponHI : HeldItem
     bool readyForSfx;
 
     Coroutine chargeCoroutine;
+    Vector2 attackDir; Vector2 queuedAttackDir; 
     void Start()
     {
         anim.Play(defaultCarryStance);
@@ -57,21 +61,28 @@ public class WeaponHI : HeldItem
         {
             if (!isChargingAttack)
             {
-                return BeginAttack(cc.attackDirection);
+                attackDir = cc.attackDirection;
+                queuedAttackDir = attackDir;
+                return BeginAttack();
             }
-            else { useQueue.Add(Time.time); }
+            else { useQueue.Add(Time.time); queuedAttackDir = cc.attackDirection; }
         }
         else
         {
+            queuedAttackDir = cc.attackDirection;
             useQueue.Add(Time.time);
         }
         return false;
     }
     public void Update()
     {
-        ManageQueuedAttacks();
-        ManageAnimation();
+        if (Application.isPlaying)
+        {
+            ManageQueuedAttacks();
+            ManageAnimation();
+        }
         ManageHitBox();
+
     }
     public override bool EndUse()
     {
@@ -90,13 +101,18 @@ public class WeaponHI : HeldItem
         else if (useQueue.Count > 0) { queueReleased = true; }
         return false;
     }
-    int attackType;
-    public virtual bool BeginAttack(Vector2 attackDir)
+    int attackType; 
+    public virtual bool BeginAttack()
     {
-        if (Mathf.Abs(attackDir.x) >= Mathf.Abs(attackDir.y)) { attackType = 0; }
         if (!isChargingAttack)
         {
-            AttackMotion attackM=new AttackMotion();
+            int lastAttackType = attackType;
+            if (Mathf.Abs(attackDir.x) >= Mathf.Abs(attackDir.y)) { attackType = 0; }
+            else { attackType = 1; }
+            if (attackType != lastAttackType) { atckIndx = 0; }
+            lastAttackType = attackType;
+
+            AttackMotion attackM = new AttackMotion();
             if (attackType == 0) { atckIndx %= sideAttackAnimations.Length; attackM = sideAttackAnimations[atckIndx]; } //Side
             if (attackType == 1) { atckIndx %= overheadAttackAnimations.Length; attackM = overheadAttackAnimations[atckIndx]; } //Overhead
             chargePerc = 0; fullyChargedAttack = false;
@@ -184,7 +200,8 @@ public class WeaponHI : HeldItem
                 {
                     useQueue.RemoveAt(i);
                     if (queueReleased) { awaitingRelease = true; queueReleased = false; }
-                    BeginAttack(cc.attackDirection);
+                    attackDir = queuedAttackDir; queuedAttackDir = cc.attackDirection;
+                    BeginAttack();
                 }
             }
             else
@@ -203,8 +220,8 @@ public class WeaponHI : HeldItem
             Vector2 slshFxPos = slashFXOffset + animData.fXPos; Vector2 slshFXScale = new Vector2((slashFXScale.x * animData.fxScale.x), (slashFXScale.y * animData.fxScale.y));
             slshFXScale.x *= cc.ca.transform.localScale.x; slshFXScale.y *= cc.ca.transform.localScale.y;
             slshFxPos = (Vector2)cc.ca.transform.position + new Vector2(slshFxPos.x * cc.ca.transform.localScale.x, slshFxPos.y * cc.ca.transform.localScale.y);
-
-            FX slashFx = FXManager.main.PlayEffectAtPoint(curAttackMotion.fxList[animData.fxInit], slshFxPos, slshFXScale, 0, Color.white, 1, 1);
+            float slshFxRot = animData.fxRot; if (cc.facingLeft) { slshFxRot = 360 - slshFxRot; }
+            FX slashFx = FXManager.main.PlayEffectAtPoint(curAttackMotion.fxList[animData.fxInit], slshFxPos, slshFXScale, slshFxRot, Color.white, 1, 1);
             slashFx.sAnim.transform.parent = transform;
         }
         else if (animData.fxInit < 0) { readyForFx = true; }
@@ -230,8 +247,21 @@ public class WeaponHI : HeldItem
         }
     }
     HitboxDetection.Hitbox hitbox;
+    static Vector2 hitboxOffset = Vector2.one * 0.5f;
     public void ManageHitBox()
     {
+        
+        hitboxCol.offset = animData.hitBoxCenter;
+        hitboxCol.size = animData.hitBoxSize;
+        if (!Application.isPlaying) { return; }
+        Vector2 rangeBonus = curAttackMotion.hitboxScale * range;
+        // if (rangeBonus.x == 0) { rangeBonus.x = curAttackMotion.attackDir.x; }
+        // if (rangeBonus.y == 0) { rangeBonus.y = curAttackMotion.attackDir.y; }
+        rangeBonus = new Vector2(rangeBonus.x * animData.hitBoxSize.x, rangeBonus.y * animData.hitBoxSize.y);
+        hitboxCol.size = rangeBonus; 
+        hitboxCol.offset = (rangeBonus*0.5f) + new Vector2(hitboxOffset.x * curAttackMotion.attackDir.x, hitboxOffset.y * curAttackMotion.attackDir.y);
+    
+
         bool enableHB = hitboxCol.enabled;
         if (enableHB)
         {

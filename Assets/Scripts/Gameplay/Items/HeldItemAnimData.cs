@@ -9,6 +9,8 @@ public class HeldItemAnimData : MonoBehaviour
     public Vector2 fxScale;
     public float fxRot;
     public Vector2 hitDirection;
+    public Vector2 hitBoxCenter;
+    public Vector2 hitBoxSize;
 
     public bool flipBodyLeft;
     public bool flipBodyFront;
